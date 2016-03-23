@@ -38,8 +38,8 @@ class Migration(migrations.Migration):
                 ('date_execute', models.TimeField(blank=True)),
                 ('date_plan_execute', models.TimeField(blank=True)),
                 ('priority', models.IntegerField(blank=True)),
-                ('parent_task', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='Tasks_manage.Tasks')),
-                ('status', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='Tasks_manage.File_storage')),
+                ('parent_task', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='tasks_manage.Tasks')),
+                ('status', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='tasks_manage.File_storage')),
             ],
         ),
     ]

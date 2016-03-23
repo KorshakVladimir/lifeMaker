@@ -9,13 +9,13 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('Tasks_manage', '0005_auto_20160312_1232'),
+        ('tasks_manage', '0005_auto_20160312_1232'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='task',
             name='status',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='Tasks_manage.Status'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='tasks_manage.Status'),
         ),
     ]

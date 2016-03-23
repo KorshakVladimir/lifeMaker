@@ -1,8 +1,12 @@
 #project
 *.pyc
-cgm/local.py
 # C extensions
 *.so
+#pycharm
+.idea/
+
+#database
+db.sqlite3
 
 # Distribution / packaging
 .Python

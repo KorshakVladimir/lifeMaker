@@ -9,7 +9,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('Tasks_manage', '0008_auto_20160312_1236'),
+        ('tasks_manage', '0008_auto_20160312_1236'),
     ]
 
     operations = [
@@ -24,11 +24,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='file_storage',
             name='task',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='Tasks_manage.Task'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='tasks_manage.Task'),
         ),
         migrations.AddField(
             model_name='status',
             name='task',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='Tasks_manage.Task'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='tasks_manage.Task'),
         ),
     ]
