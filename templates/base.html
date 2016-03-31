@@ -1,19 +1,23 @@
 {% load staticfiles %}
 
 <!doctype html>
-<html lang="ua" ng-app>
+<html lang="ua" >
 <head>
   <meta charset="utf-8">
   <title>Life Maker</title>
-  <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="css/app.css"> -->
-  <script src="bower_components/angular/angular.js"></script>
+  <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
+  <link rel="stylesheet" href="{% static "css/angular-csp.css" %}">
 </head>
 <body>
 
+{% block body %}
+{% endblock %}
 
 </body>
 <!-- Angular     -->
-	<script src="{% static "bower_components/angular/angular.min.js" %}"></script>s
+	<script src="{% static "angular/angular.min.js" %}"></script>
+	<script src="{% static "angular-sanitize/angular-sanitize.min.js" %}"></script>
+	<script src="{% static "app.js" %}"></script>
+	<script src="{% static "task/taskCtrl.js" %}"></script>
 <!-- Angular end -->
 </html>

@@ -1,9 +1,36 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block body %}
+<div ng-app="taskApp" ng-controller="createTaskCtrl">
+	<h1>Create task</h1>
+	<input type="text" ng-model='task_title' >
 
-<h1>tasks</h1>
-<ul>
-{% for task in object_list|default:"nothing" %}
-    <li>{{ task.title}}</li>
-{% empty %}
-    <li>No task yet.</li>
-{% endfor %}
-</ul>
+	<button ng-click="create_task()"> >> </button>
+	<ul ng-repeat="(key, value) in task_error" ng-cloak>
+		{% verbatim %}
+			<li>{{value[0]}}</li>
+		{% endverbatim %}
+	</ul>
+
+
+	<h1>Tasks</h1>
+	<ul type ='none' class = 'task'>
+		<input type="checkbox" name="make_for_all"  ng-click="change_all_checkbox()">
+		<form action="/task/complete_tasks/" method="post">
+			<input type="submit" value="complete">
+			<form action="/task/delete_tasks/" method="post">
+				{% csrf_token %}
+				<input type="submit" value="del">
+				{% for task in object_list %}
+				    <li status ='{{task.satus}}'><input type="checkbox" name="{{ task.id }}" >{{ task.title}}</li>
+				{% empty %}
+				    <li>No task yet.</li>
+				{% endfor %}
+			</form>
+		</form>
+	</ul>
+</div>	
+	{% block css %}
+		<link rel="stylesheet" href="{% static "css/task_list.css" %}">
+	{% endblock %}
+{% endblock %}

@@ -12,15 +12,18 @@ class Task(models.Model):
     date_execute = models.TimeField(null=True, blank=True)
     date_plan_execute = models.TimeField(null=True, blank=True)
     priority = models.IntegerField(blank=True, default = 0)
+    STATUS = (
+        ('done', 'Done'),
+        ('Start', 'Start'),
+    )
+    satus = models.CharField(max_length=100, choices = STATUS)
 
+    @classmethod
+    def get_done_status(cls):
+        return 'done'
 
     def __unicode__(self):
         return "%d %s" % (self.id, self.title)
-
-
-class Status(models.Model):
-    name = models.CharField(max_length=100)
-    task = models.ForeignKey(Task, null=True, blank=True)
 
 
 class File_storage(models.Model):

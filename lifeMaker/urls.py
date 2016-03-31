@@ -21,5 +21,5 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
 	url(r'^task/', include('tasks_manage.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon.ico')),
+    # url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon.ico')),
 ]

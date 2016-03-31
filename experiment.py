@@ -13,6 +13,10 @@ class C(A):
         # super(A,self).get()
         A.get()
 
-c_ins = C()
-c_ins.get()
-print(c_ins.x)        
+def x(z):
+    z.data = 1
+
+z = A() 
+x(z)
+
+print(z.data)        

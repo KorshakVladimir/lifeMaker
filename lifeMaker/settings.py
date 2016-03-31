@@ -49,6 +49,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middleware.angular_post.AngularPOSTMiddleware',
 ]
 
 ROOT_URLCONF = 'lifeMaker.urls'
@@ -123,4 +124,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "bower_components"),
+    os.path.join(BASE_DIR, "angularApp"),
 ]
